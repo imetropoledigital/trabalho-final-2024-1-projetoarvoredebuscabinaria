@@ -8,12 +8,8 @@ Este projeto foi desenvolvido para implementar um sistema de gerenciamento de es
 
 O projeto está organizado da seguinte forma:
 
-
-
-Estrutura do Projeto
-# inventory-management
-
-inventory-management\
+# Estrutura do Projeto
+ ```\
 ├── src\
 │   ├── main\
 │   │   └── java\
@@ -31,11 +27,60 @@ inventory-management\
 │   │               │   └── EstoqueService.java\
 │   │               └── main\
 │   │                   └── Main.java\
-└── README.md
+└── README.md\
+ ```
 
+### Diagrama de Classes
 
+Abaixo está o diagrama de classes que representa a organização das principais classes do sistema:
 
-
+```plaintext
+┌────────────────────────┐          ┌──────────────────────────────┐
+│        Produto         │◄─────────│      ProdutoEletronico       │
+│────────────────────────│          └──────────────────────────────┘
+│ - codigo: int          │          ┌──────────────────────────────┐
+│ - nome: String         │◄─────────│      ProdutoPeriferico       │
+│ - quantidade: int      │          └──────────────────────────────┘
+│────────────────────────│          
+│ + getCodigo(): int     │          
+│ + getNome(): String    │          
+│ + getQuantidade(): int │          
+│ + setQuantidade(qtd):  │          
+│ + descreverProduto():  │ (abstrato)
+└────────────────────────┘          
+          ▲                           
+          │                           
+          │                           
+┌─────────────────────────────────────┐         
+│  EstoqueService<T>   │  Interface   │
+│─────────────────────────────────────│          
+│ + inserirProduto(produto: T)        │
+│ + removerProduto(codigo: int)       │
+│ + buscarProduto(codigo: int): T     │
+│ + exibirProdutosEmOrdemCrescente()  │
+│ + exibirProdutosEmOrdemDecrescente()│
+│ + exibirProdutosEmOrdemAlfabetica() │
+│ + exibirProdutoComMenorCodigo()     │
+│ + exibirProdutoComMaiorCodigo()     │
+└─────────────────────────────────────┘          
+          ▲                           
+          │                           
+          │                           
+┌─────────────────────────────────────┐     
+│     ArvoreBinariaDeBusca<T>         │  
+│─────────────────────────────────────│     
+│ - raiz: No                          │      
+│─────────────────────────────────────│     
+│ + inserirProduto(produto: T)        │      
+│ + removerProduto(codigo: int)       │     
+│ + buscarProduto(codigo: int)        │      
+│ + exibirProdutosEmOrdemCrescente()  │
+│ + exibirProdutosEmOrdemDecrescente()│
+│ + exibirProdutosEmOrdemAlfabetica() │
+│ + exibirProdutoComMenorCodigo()     │
+│ + exibirProdutoComMaiorCodigo()     │
+└─────────────────────────────────────┘
+ ```
 Descrição dos Componentes
 1. Produto.java
 Classe abstrata que representa um produto no estoque. Possui atributos como código, nome e quantidade, além de métodos abstratos para descrever o produto.
@@ -73,3 +118,43 @@ Ao executar o sistema, você verá um menu com opções para inserir, remover, e
 Exceções Tratadas
 ProdutoJaExistenteException: Lançada ao tentar inserir um produto com código duplicado.
 ProdutoNaoEncontradoException: Lançada ao tentar remover ou buscar um produto que não existe no estoque.
+
+# Instruções de Como Realizar o Build
+Para compilar o projeto, siga os passos abaixo:
+
+## Clone o repositório:
+
+git clone https://github.com/imetropoledigital/trabalho-final-2024-1-projetoarvoredebuscabinaria.git
+
+cd inventory-management
+
+## Compile o projeto:
+
+javac -d bin src/main/java/br/ufrn/imd/**/*.java
+
+Isso compilará todos os arquivos .java e colocará os arquivos .class resultantes no diretório bin.
+
+## Instruções de Como Executar:
+Após compilar o projeto, você pode executá-lo da seguinte maneira:
+
+## Execute o projeto:
+
+java -cp bin br.ufrn.imd.main.Main
+
+## Interaja com o sistema:
+
+O sistema apresentará um menu interativo no terminal.
+Você poderá inserir novos produtos, remover produtos existentes, listar produtos, e muito mais.
+Exemplo de Uso
+Após executar o comando acima, o sistema exibirá um menu com as seguintes opções:
+
+```markdown
+Sistema de Gerenciamento de Estoque
+1. Inserir novo produto eletrônico
+2. Inserir novo produto periférico
+3. Remover produto existente
+4. Listar produtos
+5. Sair
+Escolha uma opção:
+Você pode então inserir o número da opção desejada e seguir as instruções fornecidas pelo sistema.
+```
