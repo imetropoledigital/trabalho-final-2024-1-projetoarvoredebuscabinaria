@@ -1,5 +1,17 @@
-Estrutura do Projeto
+# Sistema de Gerenciamento de Estoque
 
+## Propósito do Projeto
+
+Este projeto foi desenvolvido para implementar um sistema de gerenciamento de estoque em Java, utilizando uma árvore binária de busca (BST - Binary Search Tree). O sistema é capaz de realizar operações de inserção, remoção, busca e listagem de produtos, mantendo os dados organizados de maneira eficiente.
+
+## Organização do Projeto
+
+O projeto está organizado da seguinte forma:
+
+
+
+Estrutura do Projeto
+'''
 inventory-management
 ├── src
 │   ├── main
@@ -19,7 +31,7 @@ inventory-management
 │   │               └── main
 │   │                   └── Main.java
 └── README.md
-
+'''
 
 
 Descrição dos Componentes
