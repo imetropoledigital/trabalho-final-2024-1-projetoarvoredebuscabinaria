@@ -13,33 +13,26 @@ O projeto está organizado da seguinte forma:
 Estrutura do Projeto
 # inventory-management
 
-## src
+inventory-management\
+├── src\
+│   ├── main\
+│   │   └── java\
+│   │       └── br\
+│   │           └── ufrn\
+│   │               ├── domain\
+│   │               │   ├── Produto.java\
+│   │               │   ├── ProdutoEletronico.java\
+│   │               │   └── ProdutoPeriferico.java\
+│   │               ├── exceptions\
+│   │               │   ├── ProdutoJaExistenteException.java\
+│   │               │   └── ProdutoNaoEncontradoException.java\
+│   │               ├── services\
+│   │               │   ├── ArvoreBinariaDeBusca.java\
+│   │               │   └── EstoqueService.java\
+│   │               └── main\
+│   │                   └── Main.java\
+└── README.md
 
-### main
-
-#### java
-
-##### br
-
-###### ufrn
-
-- **domain**
-  - `Produto.java`
-  - `ProdutoEletronico.java`
-  - `ProdutoPeriferico.java`
-
-- **exceptions**
-  - `ProdutoJaExistenteException.java`
-  - `ProdutoNaoEncontradoException.java`
-
-- **services**
-  - `ArvoreBinariaDeBusca.java`
-  - `EstoqueService.java`
-
-- **main**
-  - `Main.java`
-
-- `README.md`
 
 
 
