@@ -1,6 +1,5 @@
 Estrutura do Projeto
-css
-Copiar código
+
 inventory-management
 ├── src
 │   ├── main
@@ -20,6 +19,7 @@ inventory-management
 │   │               └── main
 │   │                   └── Main.java
 └── README.md
+
 
 Descrição dos Componentes
 1. Produto.java
